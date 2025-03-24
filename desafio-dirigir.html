@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+    <title>🚦 Desafio: Pode Dirigir? </title>
+</head>
+<body>
+    <h1>🚦 Desafio: Pode Dirigir?</h1>
+    <p>Digite sua idade e descubra se você já pode dirigir!</p>
+
+    <input type="number" id="idade" placeholder="Insira sua idade">
+    <input type="button" value="Verificar" onclick="calcular()">
+
+    <div id="resultado">
+
+    </div>
+
+    <script>
+        function calcular() {
+            var idade = window.document.querySelector('input#idade').value
+            var res = window.document.querySelector('div#resultado')
+
+        if (idade === "" || idade < 0) {
+                res.innerHTML = `<p><strong>Por favor, insira uma idade válida! ⚠️</strong></p>`
+        } else if (idade >= 18) {
+            res.innerHTML = `<p><strong>Você já pode dirigir! 🚗✅</strong></p>`
+         } else if (idade < 10) {
+            res.innerHTML = `<p><strong>Você ainda é um pitoco! 🍼</strong></p>`
+         } else if (idade >= 10 && idade <= 17) { 
+            res.innerHTML = `<p><strong>Quase lá! 😉</strong></p>`
+         } else {
+            res.innerHTML = `<p><strong>Você ainda não pode dirigir! 🚫👶</strong></p>`
+         }
+        }
+    </script>
+    
+    
+</body>
+</html>
